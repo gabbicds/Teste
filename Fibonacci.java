@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Fibonacci{
 public static void main (String[] args){
@@ -10,15 +11,24 @@ de Fibonacci e retorne uma mensagem avisando se o número informado pertence ou 
     int n2=1;
     int aux;
     Scanner x = new Scanner(System.in);
-    System.out.println("Insira a quantidade de termos que deseja que sejam mostrados");
-    int elements= x.nextInt;
-    System.out.print("0, 1, 1, ");
-    for (int i=3;i<=elements;i++)
+    System.out.println("Insira um número: ");
+    int n= x.nextInt;
+    ArrayList<int> array = new ArrayList();
+    array.add(0);
+    array.add(1);
+    array.add(1);
+    bool exists=false;
+    for (int i=3;i<=n;i++)
     {
       aux=n1+n2;
-      System.out.print(aux+", ");
+      if (aux==n) exists=true;
+      else {
+      array.add(aux);
       n1=n2;
       n2=aux;
+      }
     }
+    if (exists) System.out.println("Número "+n+"" pertence a sequência");
+    else System.out.println("Número "+n+"" não pertence a sequência");
 }
 }
